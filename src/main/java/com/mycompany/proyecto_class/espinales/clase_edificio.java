@@ -5,54 +5,52 @@ package com.mycompany.proyecto_class.espinales;
  *
  * @author paul2
  */
-public class clase_edificio {
-    public static void main(String[] args) {
+
+        public class Edificio {
+            public static void main(String[] args) {
         System.out.println("bienvenidos a la clase edificio");
         
-        // Constructor
-public clase_edificio(String nombre, double area, double consumo, double factor) {
-    this.nombre = nombre;
-    this.area = area;
-    this.consumo = consumo;
-    this.factor = factor;
-}
+    private String nombre;
+    private int numeroDeEmpleados;
+    private double consumoDeEnergia;
 
-// Métodos
-// Método para obtener el nombre del edificio
-public String getNombre() {
-    return nombre;
-}
+    //contructor
+    public Edificio(String nombre, int numeroDeEmpleados, double consumoDeEnergia) {
+        this.nombre = nombre;
+        this.numeroDeEmpleados = numeroDeEmpleados;
+        this.consumoDeEnergia = consumoDeEnergia;
+    }
 
-// Método para obtener el área del edificio
-public double getArea() {
-    return area;
-}
+    public String getNombre() {
+        return nombre;
+    }
 
-// Método para obtener el consumo de electricidad del edificio
-public double getConsumo() {
-    return consumo;
-}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-// Método para obtener el factor de emisión de electricidad del edificio
-public double getFactor() {
-    return factor;
-}
+    public int getNumeroDeEmpleados() {
+        return numeroDeEmpleados;
+    }
 
-// Método para obtener el impacto ecológico del carbono del edificio
-@Override
-public double obtenerImpactoEcologico() {
-    // El impacto ecológico del carbono se calcula multiplicando el consumo de electricidad por el factor de emisión
-    // y dividiendo por 1000 para obtener el resultado en tCO2e
-    return (consumo * factor) / 1000;
-}
+    public void setNumeroDeEmpleados(int numeroDeEmpleados) {
+        this.numeroDeEmpleados = numeroDeEmpleados;
+    }
 
-// Método para mostrar la información del edificio
-@Override
-public String toString() {
-    return "Edificio: " + nombre + "\n" +
-           "Área: " + area + " m2\n" +
-           "Consumo: " + consumo + " kWh\n" +
-           "Factor: " + factor + " kgCO2e/kWh\n";
-}
-    } //fin main
+    public double getConsumoDeEnergia() {
+        return consumoDeEnergia;
+    }
+
+    public void setConsumoDeEnergia(double consumoDeEnergia) {
+        this.consumoDeEnergia = consumoDeEnergia;
+    }
+
+    @Override
+    public String toString() {
+        return "Edificio{" +
+                "nombre='" + nombre + '\'' +
+                ", numeroDeEmpleados=" + numeroDeEmpleados +
+                ", consumoDeEnergia=" + consumoDeEnergia +
+                '}';
+    }//fin main
 }// fin clase

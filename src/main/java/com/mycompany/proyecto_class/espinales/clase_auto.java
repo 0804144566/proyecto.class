@@ -7,56 +7,65 @@ package com.mycompany.proyecto_class.espinales;
 public class clase_auto {
     public static void main(String[] args) {
         System.out.println("proyecto de clases auto");
-        // Constructor
-public Auto(String marca, String modelo, double distancia, double consumo, double factor) {
-    this.marca = marca;
-    this.modelo = modelo;
-    this.distancia = distancia;
-    this.consumo = consumo;
-    this.factor = factor;
-}
+        public class Auto {
+    private String marca;
+    private String modelo;
+    private int año;
+    private double consumoDeCombustible;
 
-// Métodos
-// Método para obtener la marca del auto
-public String getMarca() {
-    return marca;
-}
+    public Auto(String marca, String modelo, int año, double consumoDeCombustible) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        this.consumoDeCombustible = consumoDeCombustible;
+    }
+//contructor 
+        public Auto(String marca, String modelo, int año) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.año = año;
+        }
 
-// Método para obtener el modelo del auto
-public String getModelo() {
-    return modelo;
-}
+    public String getMarca() {
+        return marca;
+    }
 
-// Método para obtener la distancia recorrida por el auto
-public double getDistancia() {
-    return distancia;
-}
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
-// Método para obtener el consumo de combustible del auto
-public double getConsumo() {
-    return consumo;
-}
+    public String getModelo() {
+        return modelo;
+    }
 
-// Método para obtener el factor de emisión de combustible del auto
-public double getFactor() {
-    return factor;
-}
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
 
-// Método para obtener el impacto ecológico del carbono del auto
-@Override
-public double obtenerImpactoEcologico() {
-    // El impacto ecológico del carbono se calcula multiplicando la distancia recorrida por el consumo de combustible
-    // por el factor de emisión y dividiendo por 100 para obtener el resultado en tCO2e
-    return (distancia * consumo * factor) / 100;
-}
+    public int getAño() {
+        return año;
+    }
 
-// Método para mostrar la información del auto
-@Override
-public String toString() {
-    return "Auto: " + marca + " " + modelo + "\n" +
-           "Distancia: " + distancia + " km\n" +
-           "Consumo: " + consumo + " L/100km\n" +
-           "Factor: " + factor + " kgCO2e/L\n";
-}
-    }// fin main
-}// fin clase    
+    public void setAño(int año) {
+        this.año = año;
+    }
+
+    public double getConsumoDeCombustible() {
+        return consumoDeCombustible;
+    }
+
+    public void setConsumoDeCombustible(double consumoDeCombustible) {
+        this.consumoDeCombustible = consumoDeCombustible;
+    }
+
+    @Override
+    public String toString() {
+        return "Auto{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", año=" + año +
+                ", consumoDeCombustible=" + consumoDeCombustible +
+                '}';
+    }
+    }//fin main
+    }// fin clase
