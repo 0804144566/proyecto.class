@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.proyecto_class.espinales;
 
 /**
@@ -19,7 +16,7 @@ public Bicicleta(String tipo, String color, double distancia, double calorias, d
     this.distancia = distancia;
     this.calorias = calorias;
     this.factor = factor;
-}
+} 
 
 // Métodos
 // Método para obtener el tipo de bicicleta
