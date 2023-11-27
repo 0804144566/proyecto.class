@@ -10,47 +10,52 @@ package com.mycompany.proyecto_class.espinales;
             public static void main(String[] args) {
         System.out.println("bienvenidos a la clase edificio");
         
-    private String nombre;
-    private int numeroDeEmpleados;
-    private double consumoDeEnergia;
-
-    //contructor
-    public Edificio(String nombre, int numeroDeEmpleados, double consumoDeEnergia) {
+public class Edificio implements ImpactoEcologico {
+    
+}
+    // Atributos
+    private String nombre; // Nombre del edificio
+    private double area; // Área construida en m2
+    private double consumo; // Consumo de electricidad en kWh
+    private double factor; // Factor de emisión de electricidad en kgCO2e/kWh
+    // Constructor
+    public Edificio(String nombre, double area, double consumo, double factor) {
         this.nombre = nombre;
-        this.numeroDeEmpleados = numeroDeEmpleados;
-        this.consumoDeEnergia = consumoDeEnergia;
+        this.area = area;
+        this.consumo = consumo;
+        this.factor = factor;
+        
     }
-
+    // Métodos
+    // Método para obtener el nombre del edificio
     public String getNombre() {
         return nombre;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    // Método para obtener el área del edificio
+    public double getArea() {
+        return area;
     }
-
-    public int getNumeroDeEmpleados() {
-        return numeroDeEmpleados;
+    // Método para obtener el consumo de electricidad del edificio
+    public double getConsumo() {
+        return consumo;
     }
-
-    public void setNumeroDeEmpleados(int numeroDeEmpleados) {
-        this.numeroDeEmpleados = numeroDeEmpleados;
+    // Método para obtener el factor de emisión de electricidad del edificio
+    public double getFactor() {
+        return factor;
     }
-
-    public double getConsumoDeEnergia() {
-        return consumoDeEnergia;
+    // Método para obtener el impacto ecológico del carbono del edificio
+    @Override
+    public double obtenerImpactoEcologico() {
+        // El impacto ecológico del carbono se calcula multiplicando el consumo de electricidad por el factor de emisión
+        // y dividiendo por 1000 para obtener el resultado en tCO2e
+        return (consumo * factor) / 1000;
     }
-
-    public void setConsumoDeEnergia(double consumoDeEnergia) {
-        this.consumoDeEnergia = consumoDeEnergia;
-    }
-
+    // Método para mostrar la información del edificio
     @Override
     public String toString() {
-        return "Edificio{" +
-                "nombre='" + nombre + '\'' +
-                ", numeroDeEmpleados=" + numeroDeEmpleados +
-                ", consumoDeEnergia=" + consumoDeEnergia +
-                '}';
-    }//fin main
-}// fin clase
+        return "Edificio: " + nombre + "\n" +
+               "Área: " + area + " m2\n" +
+               "Consumo: " + consumo + " kWh\n" +
+               "Factor: " + factor + " kgCO2e/kWh\n";
+    }
+} // fin clase
